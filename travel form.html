@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Preferences Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 8px 0;
+        }
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Travel Preferences Questionnaire</h1>
+    <form action="/submit-travel-preferences" method="post">
+        <div class="question">
+            <p><strong>1. What's your vibe?</strong></p>
+            <label><input type="checkbox" name="vibe" value="Relaxation"> 🌴 Relaxation (beach, spa, or laid-back vibes)</label>
+            <label><input type="checkbox" name="vibe" value="Adventure"> 🌆 Adventure (hiking, exploring, or thrill-seeking activities)</label>
+            <label><input type="checkbox" name="vibe" value="Culture"> 🎨 Culture (museums, historical sites, or art galleries)</label>
+            <label><input type="checkbox" name="vibe" value="Foodie"> 🍴 Foodie (trying local cuisines and hidden gems)</label>
+        </div>
+
+        <div class="question">
+            <p><strong>2. How much time do you have for this trip?</strong></p>
+            <label><input type="radio" name="trip_duration" value="1-3 days" required> 🕒 A quick getaway (1-3 days)</label>
+            <label><input type="radio" name="trip_duration" value="4-7 days"> 🗓️ A solid break (4-7 days)</label>
+            <label><input type="radio" name="trip_duration" value="8+ days"> 🏖️ Full-on vacation mode (8+ days)</label>
+        </div>
+
+        <div class="question">
+            <p><strong>3. What kind of destinations do you love?</strong></p>
+            <label><input type="checkbox" name="destination" value="Mountains"> 🏔️ Mountains and nature</label>
+            <label><input type="checkbox" name="destination" value="Urban"> 🏙️ Urban and bustling cities</label>
+            <label><input type="checkbox" name="destination" value="Beaches"> 🏖️ Beaches and coastal towns</label>
+            <label><input type="checkbox" name="destination" value="Theme Parks"> 🎢 Theme parks or unique attractions</label>
+        </div>
+
+        <div class="question">
+            <p><strong>4. What's your ideal travel pace?</strong></p>
+            <label><input type="radio" name="travel_pace" value="Slow" required> 🐢 Slow and relaxed (soak it all in)</label>
+            <label><input type="radio" name="travel_pace" value="Fast"> 🐇 Fast and packed (maximize every moment)</label>
+        </div>
+
+        <div class="question">
+            <p><strong>5. What’s your budget style?</strong></p>
+            <label><input type="radio" name="budget" value="Luxury" required> 💸 Luxe and splurge-worthy</label>
+            <label><input type="radio" name="budget" value="Mid-range"> 💰 Mid-range (balanced comfort and cost)</label>
+            <label><input type="radio" name="budget" value="Budget"> 🛏️ Budget-friendly</label>
+        </div>
+
+        <div class="question">
+            <p><strong>6. How do you like to travel?</strong></p>
+            <label><input type="checkbox" name="travel_mode" value="Flying"> ✈️ Flying to new places</label>
+            <label><input type="checkbox" name="travel_mode" value="Road Tripping"> 🚗 Road tripping</label>
+            <label><input type="checkbox" name="travel_mode" value="Train Hopping"> 🚂 Train hopping</label>
+            <label><input type="checkbox" name="travel_mode" value="Cruising"> 🛳️ Cruising</label>
+        </div>
+
+        <div class="question">
+            <p><strong>7. What are your food preferences?</strong></p>
+            <label><input type="checkbox" name="food" value="Local Cuisines"> 🍝 All about trying local cuisines</label>
+            <label><input type="checkbox" name="food" value="Familiar Favorites"> 🍔 Stick to familiar favorites</label>
+            <label><input type="checkbox" name="food" value="Vegetarian/Vegan"> 🌱 Vegetarian/vegan options</label>
+            <label><input type="checkbox" name="food" value="Open to Everything"> 🌍 Open to everything</label>
+        </div>
+
+        <div class="question">
+            <p><strong>8. Do you prefer:</strong></p>
+            <label><input type="radio" name="accommodation" value="Hotels" required> 🏨 Hotels</label>
+            <label><input type="radio" name="accommodation" value="Vacation Rentals"> 🏠 Vacation rentals (Airbnb/VRBO)</label>
+            <label><input type="radio" name="accommodation" value="Camping"> 🏕️ Camping/Glamping</label>
+            <label><input type="radio" name="accommodation" value="Cruise Ships"> 🛳️ Cruise ships</label>
+        </div>
+
+        <div class="question">
+            <p><strong>9. Any specific activities or interests?</strong></p>
+            <label><input type="checkbox" name="activities" value="Live Music"> 🎶 Live music or nightlife</label>
+            <label><input type="checkbox" name="activities" value="Shopping"> 🛍️ Shopping for souvenirs or local crafts</label>
+            <label><input type="checkbox" name="activities" value="Wildlife"> 🐾 Wildlife encounters</label>
+            <label><input type="checkbox" name="activities" value="Photography"> 📷 Instagram-worthy spots</label>
+        </div>
+
+        <div class="question">
+            <p><strong>10. Who are you traveling with?</strong></p>
+            <label><input type="radio" name="travel_group" value="Solo" required> 👤 Solo adventure</label>
+            <label><input type="radio" name="travel_group" value="Romantic"> ❤️ Romantic getaway</label>
+            <label><input type="radio" name="travel_group" value="Family"> 👨‍👩‍👧‍👦 Family trip</label>
+            <label><input type="radio" name="travel_group" value="Friends"> 👫 Friends’ trip</label>
+        </div>
+
+        <div class="question">
+            <p><strong>11. Do you have any must-see/must-do items?</strong></p>
+            <textarea name="must_do" rows="4" cols="50" placeholder="E.g., 'Visit a castle' or 'Wine-tasting tour'"></textarea>
+        </div>
+
+        <div class="question">
+            <p><strong>12. Anything to avoid?</strong></p>
+            <textarea name="avoid" rows="4" cols="50" placeholder="E.g., 'I hate long hikes' or 'No spicy food!'"></textarea>
+        </div>
+
+        <div class="question">
+            <p><strong>13. What’s your dream souvenir from this trip?</strong></p>
+            <textarea name="souvenir" rows="4" cols="50" placeholder="E.g., Photos, art, handmade crafts, or local treats"></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</body>
+</html>
